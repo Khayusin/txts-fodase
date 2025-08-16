@@ -1,0 +1,248 @@
+==============================================================================================================
+
+Hardware
+● Conjunto de circuitos eletrônicos interligados:
+– Processador, memória, registrador, monitor,
+impressora, mouse, disco etc.
+● Unidades funcionais (UF):
+– UCP, memória principal e dispositivos E/S;
+==============================================================================================================
+Processador/UCP
+● Unidade Lógica e Aritimética
+● Unidade de Controle
+● Registradores
+
+Dispositivos de E/S
+
+Memória Principal
+==============================================================================================================
+UCP
+● Unidade central de processamento:
+– Executa instruções presentes na memória principal;
+– Utilizando operações básicas:
+● somar, subtrair, comparar e movimentar dados.
+– Sua composição:
+● Unidade de controle (UC)
+● Unidade lógica e aritmética (ULA)
+● Registradores
+==============================================================================================================
+Unidade de Controle (UC)
+● Responsável por gerenciar atividades de todos
+os componentes do PC;
+– Ex:
+● gravação de dados;
+● busca de instruções na memória
+==============================================================================================================
+Unidade Lógica e Aritmética (ULA)
+● Responsável pelas operações lógicas:
+– Testes e comparações.
+● Responsável pelas operações aritméticas:
+– Somas e subtrações.
+==============================================================================================================
+Registradores
+● Responsáveis por armazenamento temporário
+de dados:
+– Memória interna do processador;
+– Alta velocidade e custo;
+– Baixa capacidade.
+● Não confundir com memória cache.
+==============================================================================================================
+Registradores de Uso Geral
+● Armazenamento geral de dados;
+● Manipulados diretamente por instruções;
+● Mais comuns e mais utilizados;
+==============================================================================================================
+Registradores de Uso Específico
+● Armazenam dados de controle do SO e da UCP:
+– Contador de instruções (CI) ou program counter (PC):
+● Contém o endereço da próxima instrução que o processador deve buscar e executar.
+– Apontador da pilha (AP) ou stack pointer (SP):
+● Contém o endereço do topo da pilha (que armazena a lista de programas em
+execução).
+– Registrador de instruções (RI):
+● Armazena a instrução que será decodificada e executada.
+– Registrador de status (RS) ou Program status word (PSW):
+● Armazena o resultado da última instrução.
+==============================================================================================================
+Ciclo de Busca e Instrução
+● Enquanto CI não estiver vazio:
+– Busca a instrução do endereço apontado pelo CI e
+armazena em RI;
+– Incrementa CI;
+– Decodifica RI;
+– Verifica se há operandos na memória;
+– Executa a instrução decodificada.
+==============================================================================================================
+Memória Principal
+● Memória primária (ou real): volátil;
+● Armazenamento de dados e instruções;
+● Formada por células com quantidade determinada de bits: 8, 16,
+32, 64 bits.
+● Cada célula possui um endereço;
+● Registradores para acesso à memória:
+– Memory address register (MAR): armazena endereços
+– Memory buffer register (MBR): armazena dados
+==============================================================================================================
+Memória Cache
+● Presente no processador (L1, L2, L3) e na placa mãe;
+● Volátil: armazena dados temporários da memória principal a fim de aumentar
+o desempenho;
+● Alta velocidade e custo;
+● Baixa capacidade;
+● Cache hit:
+– O dado está presente na cache (pode ser acessado diretamente na UCP).
+● Cache miss:
+– O dado não está presente na cache (necessário buscar na memória principal).
+==============================================================================================================
+Memória Secundária
+● Não-volátil;
+● Lento em relação a memória principal;
+● Alta capacidade;
+● Baixo custo;
+● Disco rígido, pendrive, discos ópticos (DVD/CD)
+==============================================================================================================
+		  registradores
+Maior		  Memória Cache      Maior custo
+capacidade de 	Memória Principal   e velocidade
+armazenamento	Memória Secundária   de acesso
+==============================================================================================================
+Dispositivos E/S
+● Permitem comunicação entre sistema e o
+mundo externo:
+– Memória secundária: HD, SD, pendrive;
+– Interface usuário-máquina: impressora, teclado,
+mouse, monitor, microfone, scanner, tablet.
+==============================================================================================================
+Barramento (bus)
+● Meio de comunicação compartilhado entre UF:
+– Dados, endereços, sinais de controle.
+● Barramentos processador-memória:
+– Curta extensão / alta velocidade (PCI).
+● Barramentos E/S:
+– Maior extensão / baixa velocidade (SCSI, Sata, USB).
+● Barramentos de Backplane:
+– Integração entre barramentos de tipos diferentes. 
+==============================================================================================================
+Tecnologias de Barramentos
+● PCI (Peripheral Component Interconnect);
+● SCSI (Small Computer System Interface)
+● USB (Universal Serial Bus);
+● SATA (Serial Advanced Technology
+Attachment).
+==============================================================================================================
+Pipelining
+● Técnica de paralelismo;
+● Permite ao processador executar múltiplas
+instruções em paralelo em diferentes estágios
+(P1, P2 etc);
+● Semelhante a uma linha de montagem;
+● Aumenta o desempenho computacional;
+● Pode utilizar um ou mais processadores.
+===============================================================================================================
+P1 Unidade de busca da instrução -> P2 Analisador da instrução -> P3 Unidade de busca dos dado -> P4 Unidade de execução da instrução
+__________________________________________________________________________
+P1 | Instr.1 | Instr.2 | Instr.3 | Instr.4 | Instr.5 | Instr.6 | Instr.7 |
+P2 |         | Instr.1 | Instr.2 | Instr.3 | Instr.4 | Instr.5 | Instr.6 |
+P3 |         |         | Instr.1 | Instr.2 | Instr.3 | Instr.4 | Instr.5 |
+P4 |         |         |         | Instr.1 | Instr.2 | Instr.3 | Instr.4 |
+--------------------------------------------------------------------------
+Tempo ->
+==============================================================================================================
+Linguagem de Máquina
+● Linguagem que o processador entende:
+– Conjunto de instruções pré-definidas pelo fabricante.
+● Gerada ao compilar/montar um programa;
+● Cada processador possui um conjunto limitado de instruções:
+– Definido pelo fabricante.
+● As instruções definidas para um processador não podem ser
+executadas por outro modelo/fabricante.
+==============================================================================================================
+Arquiteturas RISC e CISC
+● Reduced Instruction Set Computer:
+– Poucas instruções de máquina;
+– Instruções executadas pelo hardware (definidas na fábrica);
+– Pipelining facilitado (uso intenso), Ex: SPARC, Alpha.
+● Complex Instruction Set Computer:
+– Muitas instruções de máquina;
+– Instruções executadas por microcódigo (podem ser expandidas);
+– Pipelining complexo (pouco uso), Ex: Pentium (Intel).
+==============================================================================================================
+
+Instruções		Aplicações
+pré-definidas ->        Utilitários
+			Sistema Operacional
+			Linguagem de Máquina
+     [Arquitetura CISC]   Microprogramação   <- [Permitem a inclusão de novas instruções.] 
+			Circuitos Eletônicos
+==============================================================================================================
+Software
+● Aplicativos (ou aplicações):
+– Criados por programadores para fins específicos.
+● Utilitários:
+– Relacionados ao SO:
+● Ex: tradutores, compiladores, linkers, depuradores.
+– Gerenciadores:
+● Ex: gerenciador de disco, gerenciador de tarefas.
+==============================================================================================================
+Tradutor
+● Converte o código-fonte em linguagem de máquina;
+● Gera módulo-objeto (programa PRÉ-executável);
+● Montador (assembler):
+– Utiliza linguagem de montagem;
+– Dependente de equipamento;
+– Ex: Assembly.
+● Compilador:
+– Utiliza linguagem de programação;
+– Independente de equipamento (mas dependente do SO);
+– Ex: C, C++, C#, Pascal, (Java e Kotlin são exceções).
+==============================================================================================================
+programa fonte -> Tradutor -> programa-objeto
+______________________________________________________
+linguagem de montagem -> Montador -> módulo-objeto
+linguagem de alto nível -> Compilador -> módulo-objeto
+==============================================================================================================
+Interpretador
+● Mesma função do tradutor, entretanto...
+– Não gera módulo-objeto (programa PRÉ-executável);
+● Vantagens:
+– Maior flexibilidade, tipagem dinâmica.
+● Desvantagens:
+– Maior tempo para tradução das instruções durante a execução;
+– Regras de negócio ficam expostas.
+● Exemplos: Basic, Perl, Python e PHP
+==============================================================================================================
+Linker
+● Editor de ligação:
+– Gera um executável a partir de múltiplos módulosobjeto;
+– Resolve referências simbólicas (bibliotecas);
+– Define o espaço de memória para execução do
+programa.
+==============================================================================================================
+módulo-objeto ->
+módulo-objeto ->	->	Linker	  -> 	programa executável
+módulo-objeto ->
+
+==============================================================================================================
+Loader
+● Responsável por carregar o programa na
+memória principal;
+● Absoluto:
+– Posição de memória pré-definida.
+● Relocável:
+– Utiliza qualquer posição de memória.
+==============================================================================================================
+Debugger
+● Depurador;
+● Permite acompanhar a execução do programa a
+fim de detectar erros de lógica:
+– Alteração e visualização de variáveis;
+– Pontos de parada (breakpoints);
+– Mensagens de modificação de variáveis (watchpoints).
+==============================================================================================================
+
+
+
+
+
+
+
